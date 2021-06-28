@@ -113,12 +113,39 @@ body{
     color: rgb(108, 148, 164);
 }
 
+/* Search navbar */
 .search-navbar{
-    height: 35px;
+    height: 45px;
+    background-color: rgb(250, 250, 250);
+    padding: 10px;
 }
 
+.search-container{
+    background-color: rgb(255, 255, 255);
+    border: 1px solid rgb(240, 240, 240);
+}
+
+.search-container label, .search-container input{
+    height: 25px;
+}
+
+.search-icon{
+    display: inline-block;
+    width:15%;
+    border-right: 1px solid rgb(240, 240, 240);
+    color: rgb(182, 185, 187);
+    text-align: center;
+    line-height: 25px;
+}
+
+.search-bar{
+    width: calc(85% - 20px);
+    border: none;
+}
+
+/* contacts-list */
 .contacts-list{
-    height: calc(100% - 65px - 70px - 35px);
+    height: calc(100% - 65px - 70px - 45px);
     overflow-y: auto;
 }
 
