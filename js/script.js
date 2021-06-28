@@ -177,11 +177,19 @@ const app = new Vue(
                             text: 'Mi piacerebbe ma devo andare a fare la spesa.',
                             status: 'sent'
                         }
-                    ],
+                    ]
                 }
             ],  
+            indice: 0
         },
         methods: {
+            getIndexOfContact(element){
+                for(let i = 0; i < this.contacts.length; i++){
+                    if(i == element){
+                        this.indice = i;
+                    }
+                }
+            }
         }
     }
 );

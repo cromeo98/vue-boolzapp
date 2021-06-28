@@ -48,6 +48,7 @@ body{
 /* left-cont */
 .left-container{
     width: 485.5px;
+    min-width: 485.5px;
     border-right: 1px solid rgb(223, 223, 223);
 }
 
@@ -178,6 +179,7 @@ body{
 /* rigth-cont */
 .right-container{
     width: calc(100% - 485.5px);
+    min-width: 420px;
 }
 
 /* top */

@@ -66,8 +66,8 @@
                     <!-- contact-list -->
                     <ul class="contacts-list">
 
-                        <template v-for="contact in contacts">
-                            <li v-if="contact.visible" class="avatar">
+                        <template v-for="(contact, index) in contacts">
+                            <li v-if="contact.visible" class="avatar" v-on:click="getIndexOfContact(index)">
                                 <div class="avatar-name-icon">
                                     <img class="avatar-icon" v-bind:src="'img/avatar' + contact.avatar + '.jpg'" alt="avatar-icon">
                                     <span class="avatar-name">{{contact.name}}</span>
@@ -83,13 +83,17 @@
 
                     <!-- top -->
                     <div class="top-chat">
-                        <div class="avatar-name-icon">
-                            <img class="avatar-icon" src="img/avatar_1.jpg" alt="avatar-icon">
-                            <div class="name-last-acc-cont">
-                                <span class="user-name">Michele</span>
-                                <span class="last-access">Ultimo accesso alle</span>
-                            </div>     
-                        </div>
+
+                        <template v-for="(contact, index) in contacts">
+                            <div v-if="index == indice" class="avatar-name-icon">
+                                <img class="avatar-icon" v-bind:src="'img/avatar' + contact.avatar + '.jpg'" alt="avatar-icon">
+                                <div class="name-last-acc-cont">
+                                    <span class="user-name">{{contact.name}}</span>
+                                    <span class="last-access">Ultimo accesso alle</span>
+                                </div>     
+                            </div>
+                        </template>
+
                         <div class="nav-bar">
                             <i class="fas fa-search"></i>
                             <i class="fas fa-paperclip"></i>
@@ -99,10 +103,10 @@
 
                     <!-- middle -->
                     <div class="msgs-container">
-                        <div class="msg-received">
+                        <div v-for="(contact, index) in contacts" class="msg-received">
                             <div class="msg">
 
-                                <div class="text">Tutto fatto!</div>
+                                <div class="text">{{contact.messages}} - {{index}}</div>
                                 <div class="date">10/01/2020 16:15:22</div> 
                                 <!-- status: 'received' -->
                             </div>
