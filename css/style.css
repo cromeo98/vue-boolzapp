@@ -222,12 +222,3 @@ body{
     border-radius: 10px;
     border: none;
 }
-
-/* debug */
-.blu-bord{
-    border: 1px solid blue;
-}
-
-.red-bord{
-    border: 1px solid red;
-}
