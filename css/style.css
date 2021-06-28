@@ -7,6 +7,14 @@
 body{
     font-family: 'Roboto', sans-serif;
 }
+
+.block{
+    display: block;
+}
+
+.none{
+    display: none;
+}
 /* bg */
 .top-bg{
     width: 100%;
