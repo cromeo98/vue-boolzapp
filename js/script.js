@@ -127,6 +127,14 @@ const app = new Vue(
                     }
                 }
             },
+            addMsg(element){
+                if(element != null && element != ''){
+                    this.contacts[this.indice].messages.push({'date': dayjs(new Date()).format('DD/MM/YYYY HH:mm:ss'), 'text': element, 'status': 'sent'}); 
+                    this.newMsg = '';
+                    setInterval(this.scrollToEnd, 50);
+                    setTimeout(this.autoAnswer, 1000);
+                }
+            },
             autoAnswer(){
                 this.contacts[this.indice].messages.push(
                     {
@@ -136,19 +144,10 @@ const app = new Vue(
                     }
                 );
             },
-            addMsg(element){
-                if(element != null && element != ''){
-                    this.contacts[this.indice].messages.push({'date': dayjs(new Date()).format('DD/MM/YYYY HH:mm:ss'), 'text': element, 'status': 'sent'}); 
-                    this.newMsg = ''
-                    setTimeout(this.autoAnswer, 1000)
-                    this.scrollToEnd();
-                }
-            },
             scrollToEnd: function() {    	
-                var container = this.$querySelector(".msgs-container");
+                var container = this.$el.querySelector(".msgs-container");
                 container.scrollTop = container.scrollHeight;
-            },
-
+            }
         }
     }
 );
