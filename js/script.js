@@ -137,9 +137,11 @@ const app = new Vue(
                 );
             },
             addMsg(element){
-                this.contacts[this.indice].messages.push({'date': dayjs(new Date()).format('DD/MM/YYYY HH:mm:ss'), 'text': element, 'status': 'sent'}); 
-                this.newMsg = ''
-                setTimeout(this.autoAnswer, 1000)
+                if(element != null && element != ''){
+                    this.contacts[this.indice].messages.push({'date': dayjs(new Date()).format('DD/MM/YYYY HH:mm:ss'), 'text': element, 'status': 'sent'}); 
+                    this.newMsg = ''
+                    setTimeout(this.autoAnswer, 1000)
+                }
             },
         }
     }
