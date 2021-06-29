@@ -53,18 +53,23 @@ const app = new Vue(
                     visible: true,
                     messages: [
                         {
-                            date: '20/03/2020 16:30:00',
-                            text: 'Ciao come stai?',
+                            date: '10/05/2021 15:30:00',
+                            text: 'Oggi ci sei alla partita?',
                             status: 'sent' 
                         },
                         {
-                            date: '20/03/2020 16:30:55',
-                            text: 'Bene grazie! Stasera ci vediamo?',
+                            date: '10/05/2021 15:37:00',
+                            text: 'Penso di sì, ma ti aggiorno più tardi',
                             status: 'received'
                         },
                         {
-                            date: '20/03/2020 16:35:00',
-                            text: 'Mi piacerebbe ma devo andare a fare la spesa.',
+                            date: '10/05/2021 17:31:00',
+                            text: 'Ci vediamo diretti al campo alle 21',
+                            status: 'received'
+                        },
+                        {
+                            date: '10/05/2021 17:35:00',
+                            text: 'ok',
                             status: 'sent'
                         }
                     ],
@@ -75,19 +80,14 @@ const app = new Vue(
                     visible: true,
                     messages: [
                         {
-                            date: '20/03/2020 16:30:00',
-                            text: 'Ciao come stai?',
+                            date: '01/01/2021 00:20:05',
+                            text: 'Buon anno',
+                            status: 'received' 
+                        },
+                        {
+                            date: '01/01/2021 02:30:45',
+                            text: 'Buon anno anche a te!',
                             status: 'sent' 
-                        },
-                        {
-                            date: '20/03/2020 16:30:55',
-                            text: 'Bene grazie! Stasera ci vediamo?',
-                            status: 'received'
-                        },
-                        {
-                            date: '20/03/2020 16:35:00',
-                            text: 'Mi piacerebbe ma devo andare a fare la spesa.',
-                            status: 'sent'
                         }
                     ],
                 },
@@ -95,92 +95,29 @@ const app = new Vue(
                     name: 'Matteo',
                     avatar: '_5',
                     visible: false,
-                    messages: [
-                        {
-                            date: '20/03/2020 16:30:00',
-                            text: 'Ciao come stai?',
-                            status: 'sent' 
-                        },
-                        {
-                            date: '20/03/2020 16:30:55',
-                            text: 'Bene grazie! Stasera ci vediamo?',
-                            status: 'received'
-                        },
-                        {
-                            date: '20/03/2020 16:35:00',
-                            text: 'Mi piacerebbe ma devo andare a fare la spesa.',
-                            status: 'sent'
-                        }
-                    ],
+                    messages: []
                 },
                 {
                     name: 'Valentina',
                     avatar: '_6',
                     visible: false,
-                    messages: [
-                        {
-                            date: '20/03/2020 16:30:00',
-                            text: 'Ciao come stai?',
-                            status: 'sent' 
-                        },
-                        {
-                            date: '20/03/2020 16:30:55',
-                            text: 'Bene grazie! Stasera ci vediamo?',
-                            status: 'received'
-                        },
-                        {
-                            date: '20/03/2020 16:35:00',
-                            text: 'Mi piacerebbe ma devo andare a fare la spesa.',
-                            status: 'sent'
-                        }
-                    ],
+                    messages: []
                 },
                 {
                     name: 'Michael',
                     avatar: '_7',
                     visible: false,
-                    messages: [
-                        {
-                            date: '20/03/2020 16:30:00',
-                            text: 'Ciao come stai?',
-                            status: 'sent' 
-                        },
-                        {
-                            date: '20/03/2020 16:30:55',
-                            text: 'Bene grazie! Stasera ci vediamo?',
-                            status: 'received'
-                        },
-                        {
-                            date: '20/03/2020 16:35:00',
-                            text: 'Mi piacerebbe ma devo andare a fare la spesa.',
-                            status: 'sent'
-                        }
-                    ],
+                    messages: []
                 },
                 {
                     name: 'Valerio',
                     avatar: '_8',
                     visible: false,
-                    messages: [
-                        {
-                            date: '20/03/2020 16:30:00',
-                            text: 'Ciao come stai?',
-                            status: 'sent' 
-                        },
-                        {
-                            date: '20/03/2020 16:30:55',
-                            text: 'Bene grazie! Stasera ci vediamo?',
-                            status: 'received'
-                        },
-                        {
-                            date: '20/03/2020 16:35:00',
-                            text: 'Mi piacerebbe ma devo andare a fare la spesa.',
-                            status: 'sent'
-                        }
-                    ]
+                    messages: []
                 }
             ],  
             indice: 0,
+            newMsg: ''
         },
         methods: {
             getIndexOfContact(element){
@@ -190,6 +127,12 @@ const app = new Vue(
                     }
                 }
             },
+            addMsg(element){
+                console.log(element);
+                this.contacts[this.indice].messages.push({'date': '4948597', 'text': element, 'status': 'sent'});
+                console.log(this.contacts[this.indice].messages); 
+                this.newMsg = ''
+            }
         }
     }
 );

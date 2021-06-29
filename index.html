@@ -104,7 +104,7 @@
                     <!-- middle -->
                     <div class="msgs-container">
 
-                        <div v-for="(contact, index) in contacts" v-if="index == indice" @click="getNumOfMsgs(contact)">
+                        <div v-for="(contact, index) in contacts" v-if="index == indice">
 
                             <div v-for="message in contact.messages" class="msg clear-fix">
 
@@ -125,7 +125,7 @@
                     <div class="send-msg-container">
                         <div class="send-msg-nav">
                             <i class="far fa-smile"></i>
-                            <input id="msg" class="send-msg" type="text" placeholder="Scrivi un messaggio">
+                            <input id="msg" class="send-msg" type="text" @keyup.enter="addMsg(newMsg)" v-model="newMsg" placeholder="Scrivi un messaggio">
                             <i class="fas fa-microphone"></i>
                         </div>
                     </div>
