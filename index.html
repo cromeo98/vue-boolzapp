@@ -104,21 +104,20 @@
                     <!-- middle -->
                     <div class="msgs-container">
 
+                        <div v-for="(contact, index) in contacts" v-if="index == indice" @click="getNumOfMsgs(contact)">
 
-                            <div v-for="(contact, index) in contacts" v-if="index == indice" @click="getNumOfMsgs(contact)">
+                            <div v-for="message in contact.messages" class="msg clear-fix">
 
-                                <div v-for="message in contact.messages" class="msg clear-fix">
+                                <div :class="message.status == 'sent' ? 'sent' : 'received'" class="clear-fix">
 
-                                    <div :class="message.status == 'sent' ? 'sent' : 'received'" class="clear-fix">
-
-                                        <div class="text">{{message.text}}</div>
-                                        <div class="date">{{message.date}}</div> 
-
-                                    </div>
+                                    <div class="text">{{message.text}}</div>
+                                    <div class="date">{{message.date}}</div> 
 
                                 </div>
 
                             </div>
+
+                        </div>
 
                     </div>
 
