@@ -141,8 +141,14 @@ const app = new Vue(
                     this.contacts[this.indice].messages.push({'date': dayjs(new Date()).format('DD/MM/YYYY HH:mm:ss'), 'text': element, 'status': 'sent'}); 
                     this.newMsg = ''
                     setTimeout(this.autoAnswer, 1000)
+                    this.scrollToEnd();
                 }
             },
+            scrollToEnd: function() {    	
+                var container = this.$querySelector(".msgs-container");
+                container.scrollTop = container.scrollHeight;
+            },
+
         }
     }
 );
