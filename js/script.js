@@ -181,8 +181,6 @@ const app = new Vue(
                 }
             ],  
             indice: 0,
-            numOfMsgs: 0,
-            isSent: 0
         },
         methods: {
             getIndexOfContact(element){
@@ -192,15 +190,6 @@ const app = new Vue(
                     }
                 }
             },
-            getNumOfMsgs(element){
-                for(let i = 0; i < this.contacts.length; i++){
-                    if(i == element){
-                        this.indice = i;
-                    }
-                }
-                console.log(element.messages);
-            }
-
         }
     }
 );

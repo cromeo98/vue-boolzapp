@@ -15,6 +15,12 @@ body{
 .none{
     display: none;
 }
+
+.clear-fix{
+    content: "";
+    display: table;
+    clear: both;
+}
 /* bg */
 .top-bg{
     width: 100%;
@@ -210,10 +216,7 @@ body{
 
 .msg{
     width: 100%;
-    padding-bottom: 5px;
-    content: "";
-    display: table;
-    clear: both;
+    padding: 5px;
 }
 
 .received{
@@ -236,7 +239,8 @@ body{
 .sent .date, .received .date{
     font-size: 11px;
     color: rgb(130, 127, 143);
-    padding-bottom: 2px;
+    padding: 2px 4px;
+    float: right;
 }
 
 /* bottom */
