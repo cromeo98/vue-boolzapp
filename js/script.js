@@ -129,7 +129,7 @@ const app = new Vue(
             },
             addMsg(element){
                 console.log(element);
-                this.contacts[this.indice].messages.push({'date': '4948597', 'text': element, 'status': 'sent'});
+                this.contacts[this.indice].messages.push({'date': dayjs(new Date()).format('DD/MM/YYYY HH:mm:ss'), 'text': element, 'status': 'sent'});
                 console.log(this.contacts[this.indice].messages); 
                 this.newMsg = ''
             }
