@@ -127,12 +127,20 @@ const app = new Vue(
                     }
                 }
             },
+            autoAnswer(){
+                this.contacts[this.indice].messages.push(
+                    {
+                    'date': dayjs(new Date()).format('DD/MM/YYYY HH:mm:ss'), 
+                    'text': 'Ok', 
+                    'status': 'received'
+                    }
+                );
+            },
             addMsg(element){
-                console.log(element);
-                this.contacts[this.indice].messages.push({'date': dayjs(new Date()).format('DD/MM/YYYY HH:mm:ss'), 'text': element, 'status': 'sent'});
-                console.log(this.contacts[this.indice].messages); 
+                this.contacts[this.indice].messages.push({'date': dayjs(new Date()).format('DD/MM/YYYY HH:mm:ss'), 'text': element, 'status': 'sent'}); 
                 this.newMsg = ''
-            }
+                setTimeout(this.autoAnswer, 1000)
+            },
         }
     }
 );
