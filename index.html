@@ -60,14 +60,16 @@
                             <label for="search-chat" class="search-icon">
                                 <i class="fas fa-search"></i>
                             </label>
-                            <input id="search-chat" class="search-bar" type="text" placeholder="Cerca o inizia una nuova chat">
+                            <input id="search-chat" class="search-bar" type="text" placeholder="Cerca o inizia una nuova chat" v-model="wordsInSearchContact">
+                            {{searchContactByWords(wordsInSearchContact)}}{{wordsInSearchContact}}
+
                         </div>
                     </div>
 
                     <!-- contact-list -->
                     <ul class="contacts-list">
 
-                        <template v-for="(contact, index) in contacts">
+                        <template v-for="(contact, index) in contacts"> 
                             <li v-if="contact.visible" class="avatar" :class="indice == index ? 'bg-grey' : ''" v-on:click="getIndexOfContact(index)">
                                 <div class="avatar-name-icon">
                                     <img class="avatar-icon" v-bind:src="'img/avatar' + contact.avatar + '.jpg'" alt="avatar-icon">

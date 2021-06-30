@@ -117,7 +117,8 @@ const app = new Vue(
                 }
             ],  
             indice: 0,
-            newMsg: ''
+            newMsg: '',
+            wordsInSearchContact: ''
         },
         methods: {
             getIndexOfContact(element){
@@ -147,7 +148,24 @@ const app = new Vue(
             scrollToEnd: function() {    	
                 var container = this.$el.querySelector(".msgs-container");
                 container.scrollTop = container.scrollHeight;
-            }
+            },
+            searchContactByWords(element){
+                for(let i = 0; i < this.contacts.length; i++){
+                    if(element != '' && element != null){
+                        if(this.contacts[i].name.toUpperCase().includes(element) || this.contacts[i].name.toLowerCase().includes(element)){
+                            this.contacts[i].visible = true;
+                        } else {
+                            this.contacts[i].visible = false;
+                        }
+                    } else if(element == '' && this.contacts[i].messages.length == 0){
+                        this.contacts[i].visible = false;
+                    } else if(element == '' && this.contacts[i].messages.length > 0){
+                        this.contacts[i].visible = true;
+                    }
+                }
+
+
+            },
         }
     }
 );
