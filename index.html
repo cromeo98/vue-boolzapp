@@ -60,8 +60,7 @@
                             <label for="search-chat" class="search-icon">
                                 <i class="fas fa-search"></i>
                             </label>
-                            <input id="search-chat" class="search-bar" type="text" placeholder="Cerca o inizia una nuova chat" v-model="wordsInSearchContact">
-                            {{searchContactByWords(wordsInSearchContact)}}{{wordsInSearchContact}}
+                            <input id="search-chat" class="search-bar" type="text" placeholder="Cerca o inizia una nuova chat" v-model="wordsInSearchContact" @keyup="searchContactByWords(wordsInSearchContact)">
 
                         </div>
                     </div>
