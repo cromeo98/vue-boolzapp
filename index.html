@@ -114,6 +114,18 @@
 
                                 <div :class="message.status == 'sent' ? 'sent' : 'received'" class="clear-fix">
 
+                                    <div class="layover">
+                                        <i class="fas fa-chevron-down"></i>
+
+                                        <!-- <div class="delete-info-msg">
+
+                                            <div class="delete-msg">delete</div>
+                                            <div class="info">info</div>
+
+                                        </div> -->
+                                        
+                                    </div>
+
                                     <div class="text">{{message.text}}</div>
                                     <div class="date">{{message.date}}</div> 
 

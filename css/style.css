@@ -252,6 +252,42 @@ body{
     float: right;
 }
 
+/* delete + info messages */
+.msg .sent, .msg .received{
+    position: relative;
+}
+
+.sent .layover, .received .layover{
+    position: absolute;
+    right: 4px;
+    top: 4px;
+    padding: 3px;
+    border-radius: 4px;
+    font-size: 14px;
+    color: #b1b1b1;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s, opacity 0.5s linear;
+}
+.sent .layover{
+    background-color: rgb(213, 255, 232);
+    box-shadow: -3px 3px 7px 5px rgb(213, 255, 232);
+}
+
+.received .layover{
+    background-color: rgb(255, 255, 255);
+    box-shadow: -3px 3px 7px 5px rgb(255, 255, 255);
+}
+
+.msg .sent:hover .layover, .msg .received:hover .layover{
+    visibility: visible;
+    opacity: 1;
+}
+
+.delete-info-msg{
+    display: none;
+}
+
 /* bottom */
 .send-msg-container{
     background-color: rgb(243, 238, 234);
