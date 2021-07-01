@@ -152,7 +152,7 @@ const app = new Vue(
             searchContactByWords(element){
                 for(let i = 0; i < this.contacts.length; i++){
                     if(element != '' && element != null){
-                        if(this.contacts[i].name.toUpperCase().includes(element) || this.contacts[i].name.toLowerCase().includes(element)){
+                        if(this.contacts[i].name.toUpperCase().includes(element.toUpperCase()) || this.contacts[i].name.toLowerCase().includes(element.toLowerCase())){
                             this.contacts[i].visible = true;
                         } else {
                             this.contacts[i].visible = false;
@@ -163,8 +163,6 @@ const app = new Vue(
                         this.contacts[i].visible = true;
                     }
                 }
-
-
             },
         }
     }
